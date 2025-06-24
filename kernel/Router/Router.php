@@ -28,7 +28,9 @@ class Router
         if (is_array($route->getAction())) {
             [$controller, $action] = $route->getAction();
 
-            /** @var Controller $controller */
+            /**
+             * @var Controller $controller
+             */
             $controller = new $controller;
             call_user_func([$controller, 'setView'], $this->view);
             call_user_func([$controller, $action]);
