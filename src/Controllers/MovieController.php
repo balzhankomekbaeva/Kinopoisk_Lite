@@ -20,6 +20,8 @@ class MovieController extends Conrtoller
     public function store(): void
     {
 
+        dd($this->request()->file('image'));
+
         $validation = $this->request()->validate([
             'name' => ['required', 'min:3', 'max:50'],
         ]);

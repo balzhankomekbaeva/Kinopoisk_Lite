@@ -10,7 +10,7 @@
 
 
 <h1>Add movie page</h1>
-<form action="/admin/movies/add" method="post">
+<form action="/admin/movies/add" method="post" enctype="multipart/form-data">
     <p>Name</p>
     <div>
         <input type="text" name="name">
@@ -22,6 +22,9 @@
             <?php } ?>
         </ul>
     <?php } ?>
+    <div>
+        <input type="file" name="image">
+    </div>
     <div>
         <button>Add</button>
     </div>
