@@ -33,6 +33,11 @@ class MovieController extends Conrtoller
             $this->redirect('/admin/movies/add');
         }
 
-        dd('Validation successful');
+        $id = $this->db()->insert('movies', [
+            'name' => $this->request()->input('name'),
+        ]);
+
+        dd('Success with id: '.$id);
+
     }
 }
