@@ -6,52 +6,61 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit320b35aa45655361b473327b9521920e
 {
-    public static $files = [
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__.'/..'.'/symfony/deprecation-contracts/function.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__.'/..'.'/symfony/polyfill-mbstring/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__.'/..'.'/symfony/var-dumper/Resources/functions/dump.php',
-    ];
+    public static $files = array (
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+    );
 
-    public static $prefixLengthsPsr4 = [
-        'S' => [
+    public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
-        ],
-        'D' => [
+        ),
+        'D' => 
+        array (
             'Database\\Seeders\\' => 17,
             'Database\\Factories\\' => 19,
-        ],
-        'A' => [
+        ),
+        'A' => 
+        array (
             'App\\Kernel\\' => 11,
             'App\\' => 4,
-        ],
-    ];
+        ),
+    );
 
-    public static $prefixDirsPsr4 = [
-        'Symfony\\Polyfill\\Mbstring\\' => [
-            0 => __DIR__.'/..'.'/symfony/polyfill-mbstring',
-        ],
-        'Symfony\\Component\\VarDumper\\' => [
-            0 => __DIR__.'/..'.'/symfony/var-dumper',
-        ],
-        'Database\\Seeders\\' => [
-            0 => __DIR__.'/..'.'/laravel/pint/database/seeders',
-        ],
-        'Database\\Factories\\' => [
-            0 => __DIR__.'/..'.'/laravel/pint/database/factories',
-        ],
-        'App\\Kernel\\' => [
-            0 => __DIR__.'/../..'.'/kernel',
-        ],
-        'App\\' => [
-            0 => __DIR__.'/../..'.'/src',
-            1 => __DIR__.'/..'.'/laravel/pint/app',
-        ],
-    ];
+    public static $prefixDirsPsr4 = array (
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\VarDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'Database\\Seeders\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/pint/database/seeders',
+        ),
+        'Database\\Factories\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/pint/database/factories',
+        ),
+        'App\\Kernel\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/kernel',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+            1 => __DIR__ . '/..' . '/laravel/pint/app',
+        ),
+    );
 
-    public static $classMap = [
-        'Composer\\InstalledVersions' => __DIR__.'/..'.'/composer/InstalledVersions.php',
-    ];
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
 
     public static function getInitializer(ClassLoader $loader)
     {

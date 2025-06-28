@@ -2,28 +2,33 @@
 
 namespace App\Controllers;
 
-use App\Kernel\Controller\Conrtoller;
+use App\Kernel\Controller\Controller;
 
-class LoginController extends Conrtoller
+class LoginController extends Controller
 {
     public function index(): void
     {
-        $this->view('login');
+        $this->view(name: 'login', title: 'Вход');
     }
 
     public function login()
     {
         $email = $this->request()->input('email');
         $password = $this->request()->input('password');
-        $this->auth()->attempt($email, $password);
 
-        $this->redirect('/home');
+        if ($this->auth()->attempt($email, $password)) {
+            $this->redirect('/');
+        }
+
+        $this->session()->set('error', 'Неверный логин или пароль');
+
+        $this->redirect('/login');
     }
 
-    public function logout()
+    public function logout(): void
     {
         $this->auth()->logout();
 
-        return $this->redirect('/login');
+        $this->redirect('/login');
     }
 }

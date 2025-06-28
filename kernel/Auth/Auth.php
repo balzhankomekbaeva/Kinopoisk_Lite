@@ -33,11 +33,6 @@ class Auth implements AuthInterface
         return true;
     }
 
-    public function logout(): void
-    {
-        $this->session->remove($this->sessionField());
-    }
-
     public function check(): bool
     {
         return $this->session->has($this->sessionField());
@@ -56,12 +51,18 @@ class Auth implements AuthInterface
         if ($user) {
             return new User(
                 $user['id'],
+                $user['name'],
                 $user[$this->username()],
                 $user[$this->password()],
             );
         }
 
         return null;
+    }
+
+    public function logout(): void
+    {
+        $this->session->remove($this->sessionField());
     }
 
     public function table(): string
@@ -82,5 +83,10 @@ class Auth implements AuthInterface
     public function sessionField(): string
     {
         return $this->config->get('auth.session_field', 'user_id');
+    }
+
+    public function id(): ?int
+    {
+        return $this->session->get($this->sessionField());
     }
 }

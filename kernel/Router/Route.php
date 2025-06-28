@@ -26,14 +26,14 @@ class Route
         return $this->uri;
     }
 
-    public function getMethod(): string
-    {
-        return $this->method;
-    }
-
     public function getAction()
     {
         return $this->action;
+    }
+
+    public function getMethod(): string
+    {
+        return $this->method;
     }
 
     public function hasMiddlewares(): bool

@@ -8,11 +8,6 @@ class Validator implements ValidatorInterface
 
     private array $data;
 
-    public function errors(): array
-    {
-        return $this->errors;
-    }
-
     public function validate(array $data, array $rules): bool
     {
         $this->errors = [];
@@ -38,6 +33,11 @@ class Validator implements ValidatorInterface
         return empty($this->errors);
     }
 
+    public function errors(): array
+    {
+        return $this->errors;
+    }
+
     private function validateRule(string $key, string $ruleName, ?string $ruleValue = null): string|false
     {
         $value = $this->data[$key];
@@ -55,12 +55,17 @@ class Validator implements ValidatorInterface
                 break;
             case 'max':
                 if (strlen($value) > $ruleValue) {
-                    return "Field $key must not be greater than $ruleValue characters";
+                    return "Field $key must be at most $ruleValue characters long";
                 }
                 break;
             case 'email':
                 if (! filter_var($value, FILTER_VALIDATE_EMAIL)) {
                     return "Field $key must be a valid email address";
+                }
+                break;
+            case 'confirmed':
+                if ($value !== $this->data["{$key}_confirmation"]) {
+                    return "Field $key must be confirmed";
                 }
                 break;
         }

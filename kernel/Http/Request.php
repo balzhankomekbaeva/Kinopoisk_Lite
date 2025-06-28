@@ -20,18 +20,12 @@ class Request implements RequestInterface
 
     public static function createFromGlobals(): static
     {
-        return new static(
-            $_GET,
-            $_POST,
-            $_SERVER,
-            $_FILES,
-            $_COOKIE,
-        );
+        return new static($_GET, $_POST, $_SERVER, $_FILES, $_COOKIE);
     }
 
     public function uri(): string
     {
-        return strtok($_SERVER['REQUEST_URI'], '?');
+        return strtok($this->server['REQUEST_URI'], '?');
     }
 
     public function method(): string
@@ -67,6 +61,7 @@ class Request implements RequestInterface
     public function validate(array $rules): bool
     {
         $data = [];
+
         foreach ($rules as $field => $rule) {
             $data[$field] = $this->input($field);
         }
