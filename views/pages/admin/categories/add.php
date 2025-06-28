@@ -17,11 +17,11 @@
                     <div class="col-md">
                         <div class="form-floating">
                             <input
-                                type="text"
-                                class="form-control <?php echo $session->has('name') ? 'is-invalid' : '' ?>"
-                                id="name"
-                                name="name"
-                                placeholder="Иван Иванов"
+                                    type="text"
+                                    class="form-control <?php echo $session->has('name') ? 'is-invalid' : '' ?>"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Иван Иванов"
                             >
                             <label for="name">Название</label>
                             <?php if ($session->has('name')) { ?>

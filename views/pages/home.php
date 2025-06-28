@@ -19,5 +19,4 @@
         </div>
     </main>
 
-
 <?php $view->component('end'); ?>

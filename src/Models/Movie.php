@@ -9,7 +9,7 @@ class Movie
         private string $name,
         private string $description,
         private string $preview,
-        private int $categoryId,
+        private ?int $categoryId,
         private string $createdAt,
         private array $reviews = [],
     ) {}

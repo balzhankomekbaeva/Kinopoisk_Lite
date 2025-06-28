@@ -20,12 +20,12 @@
                     <div class="col-md">
                         <div class="form-floating">
                             <input
-                                type="text"
-                                class="form-control <?php echo $session->has('name') ? 'is-invalid' : '' ?>"
-                                id="name"
-                                value="<?php echo $movie->name() ?>"
-                                name="name"
-                                placeholder="Пацаны"
+                                    type="text"
+                                    class="form-control <?php echo $session->has('name') ? 'is-invalid' : '' ?>"
+                                    id="name"
+                                    value="<?php echo $movie->name() ?>"
+                                    name="name"
+                                    placeholder="Пацаны"
                             >
                             <label for="name">Имя</label>
                             <?php if ($session->has('name')) { ?>
@@ -40,12 +40,12 @@
                     <div class="col-md">
                         <div class="form-floating">
                             <textarea
-                                style="height: 100px"
-                                type="text"
-                                class="form-control <?php echo $session->has('description') ? 'is-invalid' : '' ?>"
-                                id="description"
-                                name="description"
-                                placeholder="Крутой фильм про..."
+                                    style="height: 100px"
+                                    type="text"
+                                    class="form-control <?php echo $session->has('description') ? 'is-invalid' : '' ?>"
+                                    id="description"
+                                    name="description"
+                                    placeholder="Крутой фильм про..."
                             ><?php echo $movie->description() ?></textarea>
                             <label for="name">Описание</label>
                             <?php if ($session->has('description')) { ?>
